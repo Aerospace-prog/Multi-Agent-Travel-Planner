@@ -22,6 +22,7 @@ import json
 from typing import TypedDict
 from dotenv import load_dotenv
 
+# Load environment variables from .env file (for local development)
 load_dotenv()
 
 from langgraph.graph import StateGraph, END
@@ -52,9 +53,34 @@ class TravelState(TypedDict):
 # LLM CONFIGURATION
 # ============================================================================
 
-# Shared LLM instance — API key is read from GROQ_API_KEY env var
+# Get API key from environment or Streamlit secrets
+def get_api_key():
+    """Get Groq API key from environment variables or Streamlit secrets"""
+    # Try to get from environment first (local development)
+    api_key = os.getenv("GROQ_API_KEY")
+    
+    # If not found, try Streamlit secrets (cloud deployment)
+    if not api_key:
+        try:
+            import streamlit as st
+            if hasattr(st, 'secrets') and 'GROQ_API_KEY' in st.secrets:
+                api_key = st.secrets["GROQ_API_KEY"]
+        except:
+            pass
+    
+    return api_key
+
+# Shared LLM instance — API key is read from GROQ_API_KEY env var or Streamlit secrets
 # Using Groq's free tier with llama-3.3-70b-versatile model
-llm = ChatGroq(model="llama-3.3-70b-versatile", temperature=0.7)
+api_key = get_api_key()
+if not api_key:
+    raise ValueError(
+        "GROQ_API_KEY not found. Please set it in:\n"
+        "- Local: .env file with GROQ_API_KEY=your_key\n"
+        "- Streamlit Cloud: App Settings → Secrets → Add GROQ_API_KEY = \"your_key\""
+    )
+
+llm = ChatGroq(model="llama-3.3-70b-versatile", temperature=0.7, api_key=api_key)
 
 
 # ============================================================================

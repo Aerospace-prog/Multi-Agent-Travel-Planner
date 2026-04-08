@@ -83,9 +83,19 @@ Create a `.env` file in the project root:
 GROQ_API_KEY=your_groq_api_key_here
 ```
 
+## 🌐 Live Demo
+
+**Try it now without installation:** https://multi-agent-travel-planner-cshdmubaf5yrdhae7chiok.streamlit.app/
+
+The application is deployed on Streamlit Cloud and publicly accessible. No setup required!
+
 ## 🚀 Usage
 
-### Option 1: Streamlit Web Interface (Recommended)
+### Option 1: Use the Live Demo (Easiest)
+
+Simply visit the live demo link above and start planning your trip!
+
+### Option 2: Streamlit Web Interface (Local)
 
 ```bash
 streamlit run multi_agent_system_streamlit.py
@@ -100,7 +110,7 @@ Then open your browser to `http://localhost:8501`
 - Download travel plan as text file
 - Example requests for guidance
 
-### Option 2: Command Line Interface
+### Option 3: Command Line Interface
 
 ```bash
 python multi_agent_system_streamlit.py
