@@ -218,20 +218,6 @@ Try these example travel requests:
 7. **Error Handling:** Graceful handling of API errors and invalid inputs
 8. **Free Tier LLM:** Uses Groq's free API (no credit card required)
 
-## 🎥 Demo Video
-
-**Duration:** 5-8 minutes with voice explanation
-
-**Content Covered:**
-1. Introduction to the multi-agent system
-2. Agent architecture and roles explanation
-3. LangGraph workflow demonstration
-4. Code walkthrough highlighting key components
-5. Live demo with multiple example requests
-6. Results analysis and output quality
-7. Key learnings and technical insights
-
-**Video Link:** [Upload to Google Drive and add link here]
 
 ## 🐛 Troubleshooting
 
@@ -246,18 +232,6 @@ Try these example travel requests:
 
 ### Issue: "Planner returns 'unknown' destination"
 **Solution:** Make your request more specific. Include clear destination name.
-
-## 📝 Assignment Submission
-
-### GitHub Repository
-- Repository URL: [Add your GitHub repo link]
-- Ensure repository is public
-- Include all files: code, requirements.txt, README.md, .env.example
-
-### Demo Video
-- Upload to Google Drive
-- Set sharing to "Anyone with the link can view"
-- Video Link: [Add your Google Drive link]
 
 ## 🎓 Key Learnings
 
@@ -275,9 +249,7 @@ This project is created for educational purposes as part of a multi-agent system
 
 ## 👤 Author
 
-[Your Name]
-[Your Email]
-[Your GitHub Profile]
+Kushagra
 
 ## 🙏 Acknowledgments
 
